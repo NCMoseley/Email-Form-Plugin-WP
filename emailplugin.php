@@ -1,9 +1,9 @@
 <?php
 /*
-Plugin Name: Contact Form Plugin
+Plugin Name: Email Form Plugin
 Plugin URI: http://youfoundnate.com/
 Description: Simple email contact form plugin
-Version: 1.0
+Version: 1.1
 Author: Nathan Moseley
 Author URI: http://youfoundnate.com/
 */
@@ -97,7 +97,6 @@ function wpse_load_plugin_css()
 {
     $plugin_url = plugin_dir_url(__FILE__);
 
-    wp_enqueue_style('style1', $plugin_url . 'css/style1.css');
-    wp_enqueue_style('style2', $plugin_url . 'css/style2.css');
+    wp_enqueue_style('style1', $plugin_url . 'css/nl-form.css');
 }
 add_action('wp_enqueue_scripts', 'wpse_load_plugin_css');
