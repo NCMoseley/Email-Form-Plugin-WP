@@ -38,7 +38,7 @@ function html_form_code()
         echo ' way';
         echo '<br />by ';
         echo '<input type="text" value="" placeholder="any time" data-subline="For example: <em>next-week</em> or <em>next-month</em>" /> in ';
-        echo '<input type="text" value="" placeholder="any city" data-subline="For example: <em>Los Angeles</em> or <em>Vancouver</em>"/>.';
+        echo '<input type="text" value="" placeholder="any city" data-subline="For example: <em>Los Angeles</em> or <em>Vancouver</em>"/>.<br />';
         echo '<input type="email" name="cf-email" value="' . (isset($_POST["cf-email"]) ? esc_attr($_POST["cf-email"]) : '') . '" placeholder="your email" id="myEmail" required="required"  class="userInput">';
         echo '<div class="nl-submit-wrap">';
         echo '<button id="form-submit" class="nl-submit" type="submit" name="cf-submitted">Submit</button>';
@@ -65,16 +65,16 @@ function deliver_mail()
 
         // get the blog administrator's email address
         // $to = get_option('admin_email');
-        $to = 'ncmoseley@gmail.com';
+        $to = 'ncmoseley@gmail.com,seanstobo@gmail.com';
         $subjectname = $_POST["cf-name"];
-        $subject = 'Someone Needs a Dev!';
-        $message = 'Lets get this going!';
+        $subject = 'Someone on caravelweb.com needs a Dev!';
+        $message = 'Sent from our website';
         $headers = "From: $subjectname <$email>" . "\r\n";
 
         // If email has been process for sending, display a success message
         if (wp_mail($to, $subject, $message, $headers)) {
             echo '<div>';
-            echo '<p>Thanks for contacting me, expect a response soon!</p>';
+            echo '<p>Thanks for contacting us, expect a response soon!</p>';
             echo '</div>';
         } else {
             echo 'An unexpected error occurred';
